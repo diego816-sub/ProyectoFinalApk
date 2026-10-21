@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: nexovisita
+    runtime: python
+    plan: free
+    rootDir: server
+    buildCommand: pip install -r requirements-cloud.txt
+    startCommand: python cloud.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.9
+      - key: HOST
+        value: 0.0.0.0
+      - key: NEXOVISITA_DB_DRIVER
+        value: mysql
+      - key: NEXOVISITA_MEDIA
+        value: cloudinary
+      - key: NEXOVISITA_MAIL
+        value: gmail_api
+      - key: MYSQL_SSL_CA
+        value: /etc/secrets/ca.pem
+      - key: MYSQL_HOST
+        sync: false
+      - key: MYSQL_PORT
+        sync: false
+      - key: MYSQL_USER
+        sync: false
+      - key: MYSQL_PASSWORD
+        sync: false
+      - key: MYSQL_DATABASE
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CLOUDINARY_PREFIX
+        sync: false
+      - key: GMAIL_CLIENT_ID
+        sync: false
+      - key: GMAIL_CLIENT_SECRET
+        sync: false
+      - key: GMAIL_REFRESH_TOKEN
+        sync: false
+      - key: GMAIL_FROM
+        sync: false
