@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <ScrollView android:id="@+id/home_page" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/app_name" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/primary" android:layout_marginBottom="24dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:background="@drawable/hero_background">
+                    <ImageView android:layout_width="88dp" android:layout_height="88dp" android:scaleType="fitCenter" android:src="@drawable/nexo_mark" android:importantForAccessibility="no" />
+                    <TextView style="@style/Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/welcome" android:textSize="40sp" android:layout_marginTop="16dp" />
+                    <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/home_intro" android:layout_marginTop="12dp" android:lineSpacingExtra="4dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/new_walk" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:layout_marginTop="20dp" android:text="@string/new_walk" android:textAllCaps="false" app:cornerRadius="16dp" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/your_progress" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="28dp" />
+                <TextView android:id="@+id/summary" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="@color/primary" android:layout_marginTop="12dp" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/local_summary" android:layout_marginTop="4dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/last_walk" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="28dp" />
+                <TextView android:id="@+id/last_walk_text" style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/home_empty" android:layout_marginTop="12dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/view_last" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/view_last" android:textAllCaps="false" android:visibility="gone" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/retry_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/retry" android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:id="@+id/history_page" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp" android:visibility="gone">
+            <TextView style="@style/Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history" />
+            <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_intro" android:layout_marginTop="8dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/filter_date" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/filter_date" android:textAllCaps="false" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/clear_filter" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clear_filter" android:textAllCaps="false" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/history_empty" style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="32dp" android:text="@string/empty_history" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/retry_history" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/retry" android:visibility="gone" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/history_list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingTop="12dp" android:paddingBottom="12dp" />
+        </LinearLayout>
+        <ScrollView android:id="@+id/profile_page" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+                <TextView style="@style/Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/profile" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/profile_intro" android:layout_marginTop="8dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/language_title" android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="24dp" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/language_description" android:layout_marginTop="8dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/change_language" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:textAllCaps="false" android:layout_marginTop="8dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:background="@drawable/hero_background" android:layout_marginTop="28dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_person" android:importantForAccessibility="no" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/local_mode" android:textSize="24sp" android:textStyle="bold" android:layout_marginTop="16dp" />
+                    <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/local_explanation" android:layout_marginTop="8dp" android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/privacy_title" android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="28dp" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/privacy_body" android:layout_marginTop="8dp" android:lineSpacingExtra="4dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/next_title" android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="28dp" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/next_body" android:layout_marginTop="8dp" android:lineSpacingExtra="4dp" />
+                <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/app_version" android:layout_marginTop="28dp" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/navigation" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/surface" app:menu="@menu/navigation" app:labelVisibilityMode="labeled" />
+</LinearLayout>

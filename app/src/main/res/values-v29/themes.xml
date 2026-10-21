@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.PasoAPaso" parent="Base.Theme.PasoAPaso">
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

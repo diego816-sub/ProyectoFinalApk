@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <application
+        android:allowBackup="false"
+        android:localeConfig="@xml/locales_config"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PasoAPaso"
+        android:usesCleartextTraffic="false">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/maps_api_key" />
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data android:name="autoStoreLocales" android:value="true" />
+        </service>
+        <service android:name=".tracking.WalkTrackingService" android:exported="false"
+            android:foregroundServiceType="location" android:stopWithTask="false" />
+        <activity android:name=".ui.WalkActivity" android:exported="false" />
+        <activity android:name=".ui.MainActivity" android:exported="false" />
+        <service android:name=".field.JourneyService" android:exported="false" android:foregroundServiceType="location" android:stopWithTask="false" />
+        <activity android:name=".field.JourneyActivity" android:exported="false" />
+        <activity android:name=".field.FieldMapActivity" android:exported="false" />
+        <service android:name=".field.VisitSyncService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" />
+        <activity android:name=".field.FieldActivity" android:windowSoftInputMode="adjustResize" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

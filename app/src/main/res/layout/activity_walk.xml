@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:title="@string/walk_title" app:navigationIcon="@drawable/ic_back" app:navigationContentDescription="@string/back" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="300dp" app:cardCornerRadius="24dp" app:cardElevation="0dp">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/mint">
+                    <androidx.fragment.app.FragmentContainerView android:id="@+id/map_container" android:layout_width="match_parent" android:layout_height="match_parent" />
+                    <TextView android:id="@+id/map_message" style="@style/Body" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="32dp" android:gravity="center" android:text="@string/map_unavailable" android:visibility="gone" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.button.MaterialButton android:id="@+id/locate" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end" android:text="@string/locate" android:textAllCaps="false" />
+            <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ready" android:textSize="17sp" android:textColor="@color/primary" android:textStyle="bold" android:accessibilityLiveRegion="polite" />
+            <TextView android:id="@+id/accuracy" style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingTop="20dp" android:paddingBottom="16dp" android:baselineAligned="false">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/distance" android:textSize="13sp" android:textColor="@color/muted" />
+                    <TextView android:id="@+id/distance" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="30sp" android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/duration" android:textSize="13sp" android:textColor="@color/muted" />
+                    <TextView android:id="@+id/duration" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="30sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:id="@+id/notice" style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/foreground_notice" android:textSize="14sp" android:layout_marginBottom="16dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/start_pause" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:text="@string/start" android:textAllCaps="false" app:cornerRadius="16dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/finish" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="@string/finish" android:textAllCaps="false" app:cornerRadius="16dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/rename" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/rename" android:textAllCaps="false" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/delete" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/delete" android:textAllCaps="false" android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
