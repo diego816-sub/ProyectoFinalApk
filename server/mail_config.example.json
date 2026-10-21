@@ -1,0 +1,7 @@
+{
+  "host": "smtp.gmail.com",
+  "port": 587,
+  "security": "starttls",
+  "username": "tu.cuenta.del.proyecto@gmail.com",
+  "from": "tu.cuenta.del.proyecto@gmail.com"
+}

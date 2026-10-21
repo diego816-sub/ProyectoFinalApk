@@ -1,0 +1,7 @@
+# Replace the domain with one whose DNS points to your server.
+visitas.example.com {
+    request_body {
+        max_size 4MB
+    }
+    reverse_proxy 127.0.0.1:8765
+}

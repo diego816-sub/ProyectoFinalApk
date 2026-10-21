@@ -1,0 +1,19 @@
+{
+  "NEXOVISITA_DB_DRIVER": "mysql",
+  "NEXOVISITA_MEDIA": "cloudinary",
+  "NEXOVISITA_MAIL": "gmail_api",
+  "MYSQL_HOST": "",
+  "MYSQL_PORT": "",
+  "MYSQL_USER": "",
+  "MYSQL_PASSWORD": "",
+  "MYSQL_DATABASE": "nexovisita",
+  "MYSQL_SSL_CA": "C:/ruta/privada/ca.pem",
+  "CLOUDINARY_CLOUD_NAME": "",
+  "CLOUDINARY_API_KEY": "",
+  "CLOUDINARY_API_SECRET": "",
+  "CLOUDINARY_PREFIX": "nexovisita18",
+  "GMAIL_CLIENT_ID": "",
+  "GMAIL_CLIENT_SECRET": "",
+  "GMAIL_REFRESH_TOKEN": "",
+  "GMAIL_FROM": ""
+}
